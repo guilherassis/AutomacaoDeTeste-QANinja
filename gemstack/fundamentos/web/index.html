@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>GemStack</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="app.js"> </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <form onsubmit="return false">
+
+                <h2>Crie sua conta</h2>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input id="name" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Como oube da gente?</label>
+                    <select class="form-control" id="opcoes">
+                        <option disabled selected value="">Selecione uma opção</option>
+                        <option value="Site de busca">Site de busca</option>
+                        <option value="Indicacao de amigo">Indicação de amigo</option>
+                        <option value="Redes sociais">Redes sociais</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input id="novidades" type="checkbox">Quero receber novidades :)
+                </div>
+
+                        
+                <button type="submit" class="btn btn-success" onclick="enviaCadastro()" >Cadastrar</button>
+
+            </form>
+        </div>
+    </body>
+</html>

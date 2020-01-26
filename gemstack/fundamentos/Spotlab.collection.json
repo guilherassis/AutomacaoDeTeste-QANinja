@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "4d45e61b-baa1-4b71-b7e0-77b5afc2abff",
+		"name": "Spotlab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spots",
+			"item": [
+				{
+					"name": "List of spots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "5dfa937b1883f9122e1331a2",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/spots",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save new spot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "5dfa937b1883f9122e1331a2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/Users/papito/Work/gemstack/web/assets/yahoo.jpeg"
+								},
+								{
+									"key": "company",
+									"value": "Yahoo",
+									"type": "text"
+								},
+								{
+									"key": "techs",
+									"value": "ruby, go",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/spots",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get unique spot",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "5dfa937b1883f9122e1331a2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/spots/5e02e6a0e2bd970f85468898",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots",
+								"5e02e6a0e2bd970f85468898"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete spot",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "5dfa937b1883f9122e1331a2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/spots/5e03c3c09ae4c742eb875802",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots",
+								"5e03c3c09ae4c742eb875802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/spots?tech=ruby",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots"
+							],
+							"query": [
+								{
+									"key": "tech",
+									"value": "ruby"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "New Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"fernando@papito.io\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/sessions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa937b1883f9122e1331a2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"eu&papito.io\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/sessions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa937b1883f9122e1331a2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/sessions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Without data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa937b1883f9122e1331a2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/sessions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Booking Spot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa9c551883f9122e1331a7"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date\": \"12/12/2019\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/spots/5dfa9c551883f9122e1331a7/bookings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"spots",
+								"5dfa9c551883f9122e1331a7",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approval",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa9c551883f9122e1331a7"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bookings/5e02eddf2c9df110c11e4eb6/approvals",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"5e02eddf2c9df110c11e4eb6",
+								"approvals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "user_id",
+								"type": "text",
+								"value": "5dfa9c551883f9122e1331a7"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bookings/5e02ee58928f56112403b493/rejections",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"5e02ee58928f56112403b493",
+								"rejections"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c62aa00d-f27c-44b0-a919-7b0cc87ed6aa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f02d948-dcfa-40c9-9197-4304b928bc44",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

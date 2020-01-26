@@ -1,0 +1,1 @@
+puts "Hello GemStack from Qa Ninja"
