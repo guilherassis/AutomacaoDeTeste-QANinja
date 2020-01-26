@@ -2,6 +2,7 @@
 
 ### Automatização (do zero ao ninja) de sistemas com desafios e cenários do mundo real.
 
+
 ## Testes automatizados utilizando:
 
 
