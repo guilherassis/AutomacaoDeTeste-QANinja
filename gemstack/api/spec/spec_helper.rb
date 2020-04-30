@@ -1,5 +1,6 @@
 
 require_relative "services/api"
+require_relative "libs/mongo"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -11,4 +12,12 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+end
+
+
+# Adicionando um novo metodo na classe String do ruby, irá converter string para BSON ObjectId
+class String
+  def to_mongo_id
+      BSON::ObjectId.from_string(self)
+  end
 end
