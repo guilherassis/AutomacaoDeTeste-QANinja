@@ -1,0 +1,88 @@
+ -- Glossario --  
+
+chromedriver - sempre instalar antes para que os testes sejam executados, para instalar, baixe o arquivo chromedrive e coloque na pasta windows
+rspec - utilizado para validar
+cucumber - trabalha com BBD
+capybara - biblioteca/framework que interage com aplicações WEB. Sempre importar dentro do arquivo env.rb e lá que informa o navegador a ser usado
+report_builder - é uma gem que transforma o relatorio para ficar mais bonito. (https://github.com/rajatthareja/ReportBuilder)
+site_prism - 
+smoke - teste é smoke ou teste de fumaça é o teste que é realizado nas partes criticas e necessarias do codigo. Pois sem ele, os outros testes não irão funcionar.
+
+ --- Extensões Visual Code --- 
+
+- Robot Framework
+- Hyper Term Theme
+- Material Icon Theme
+- Ruby Langage Colorization
+- Cucumber (Gherkin) Full Support
+
+--------------------------------------
+
+ --- Comandos ---
+
+- Iniciar um projeto Ruby dentro da pasta
+bundle init
+
+- Instalar as gem que tiverem sido citadas no Gemfile
+bundle install
+
+- Caso não instale a gem, pode tentar instalar isolado
+gem install cucumber
+
+- Criar uma estrutura cucumber dentro da pasta
+cucumber --init
+
+- Executar o arquivo que esta testando
+rspec spec\routes\spots\delete_spec.rb
+
+- Executar todos os testes
+rspec
+
+- Para executar somente os cenarios marcados como smoke
+rspec -t smoke
+
+- Grava um relatorio das execuções em um arquivo de formato HTML.O Arquivo será salvo dentro da pasta da qual foi executado. 
+rspec --format html --out report.html
+
+- Grava um relatorio das execuções em um arquivo de formato HTML.Salva o arquivo dentro da pasta escolhida.
+- Esta linha de comando pode ser colocado dentro do do arquivo .rspec , com isso toda execução full dos testes, o arquivo será salvo automaticamente.
+rspec --format html --out logs/report.html
+ 
+
+*** Pode ter integração com o Jenkins
+
+
+- Executar o cucumber na pasta do arquivo
+cucumber
+
+- Vê o de - para do ingles para portugues na sintaxe da linguagem
+cucumber --i18n-keywords pt
+
+- Roda somente a tag que foi especificada
+cucumber -t @nome_da_tag
+
+- Caso rode o comando abaixo somente com os cenarios escritos, ele te fala como deve ser montado as steps.
+cucumber
+
+- Para baixar o chromedriver, baixe de acordo com a versâo do google chrome
+https://chromedriver.storage.googleapis.com/index.html
+
+- Depois de feito o download, colocar o chromedriver.exe dentro do path. Para saber o path utilize o comando abaixo.
+- Por default coloque no c:/windows, no linux/mac é no /usr/local/bin
+echo %path%
+
+- Para confirmar se algum elemento existe no site que esta sendo testado, ir em inspecionar, console e digitar o comando abaixo. Abaixo é usado o elemento dashboard como exemplo
+document.querySelector(".dashboard")
+
+- Grava um relatorio das execuções em um arquivo de formato HTML.Salva o arquivo dentro da pasta escolhida.
+cucumber --format html --out log/report.html
+
+- Ao criar o arquivo dentro da raiz do projeto, chamado cucumber.yml e colocar os parametros abaixo, ele irá executar o relatorio no terminal e no html.
+---
+default: --format pretty -p html
+html: --format html --out log/report.html
+
+
+- Acessar o terminal/console do ruby mp CMDER
+irb
+

@@ -55,9 +55,9 @@ class MongoDb
     
     #Conexão com o banco
     def client
+        # A configuração do mongo_url esta no arquivo /env/hmg.yaml
         #O link é formado por tipoDoBanco://usuario:senha@host:port/database?retryWrites=false
-        return client = Mongo::Client.new("mongodb://qaninja:qaninja123@ds035664.mlab.com:35664/spotdb?retryWrites=false")
-
+        return Mongo::Client.new(CONFIG["mongo_url"])
     end
 
     def spotsCollection

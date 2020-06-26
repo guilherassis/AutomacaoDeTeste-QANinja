@@ -1,30 +1,25 @@
 #language: pt
 
 Funcionalidade: Login
-    Para que eu passa ter acesso a interface de administração de spots
+    Para que eu passe ter acesso a interface de administração de spots
     Sendo um usuário que possui um bom email
     Quero poder iniciar uma nova sessão
 
     
     Cenario: Nova sessao
-
-    Dado que eu tenho o email "guilherme@acme.com"
-    E acesso a pagina de login
-    Quando eu submeto este email
-    Então devo ver a área de administração de spots
+        
+            Quando eu submeto a sessao com "guilherme@ninja.oi"
+            Então devo ver a área de administração de spots
     
     
-    Cenario: Email ruim
+    #Tecnica de DDT
+    Esquema do Cenario: Tentativas 
+        
+           Quando eu submeto a sessao com "<email>"
+            Então devo ver a mensagem de alerta : "<mensagem>"
 
-    Dado que eu tenho o email "guilherme##acme.com"
-    E acesso a pagina de login
-    Quando eu submeto este email
-    Então devo ver a mensagem de alerta : "Oops. Informe um email válido!"
-
-    
-    Cenario: Email branco
-
-    Dado que eu tenho o email ""
-    E acesso a pagina de login
-    Quando eu submeto este email
-    Então devo ver a mensagem de alerta : "Oops. Informe um email válido!"
+            #Massa de teste - Testa o email ruim e depois o email em branco
+            Exemplos:
+            | email               | mensagem                       | 
+            | guilherme##acme.com | Oops. Informe um email válido! |
+            |                     | Oops. Informe um email válido! |

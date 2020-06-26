@@ -1,0 +1,15 @@
+---
+# host : ds035664.mlab.com
+# port: 35664
+# Database: spotdb
+# user: qaninja
+# Password: qaninja123
+
+# Mostrar Log informativo
+# Mongo::Logger.logger.level = Logger::INFO
+
+# Gravar log em um arquivo
+base_uri: https://spotlab-api.herokuapp.com
+#O link é formado por tipoDoBanco://usuario:senha@host:port/database?retryWrites=false
+# Caso dê erro, utilize as seguintes credenciais, mongodb://qaninja:qaninja123@ds012538.mlab.com:12538/spotdb2?retryWrites=false
+mongo_url: mongodb://qaninja:qaninja123@ds035664.mlab.com:35664/spotdb?retryWrites=false
